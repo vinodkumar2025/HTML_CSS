@@ -32,24 +32,45 @@
 
 // 🧠 In short: A polyfill is a fallback implementation of a feature that’s missing in certain browsers.
 
-let user = {
-    fName: 'King',
-    lName: 'Kohli'
-}
+// let user = {
+//     fName: 'King',
+//     lName: 'Kohli'
+// }
 
-let FullName = function (state){
-    console.log(this.fName + ' '+ this.lName +' from '+state)
-}
+// let FullName = function (state){
+//     console.log(this.fName + ' '+ this.lName +' from '+state)
+// }
 
-let ufullname = FullName.bind(user);
-ufullname()
+// let ufullname = FullName.bind(user);
+// ufullname()
 
-Function.prototype.myBind = function(...args){
-    let obj = this;
-    let parems = args.slice(1)
-    return function(...args2){
-        obj.call(args[0],[...parems,[...args2]])
-    }
-}
+// Function.prototype.myBind = function(...args){
+//     let obj = this;
+//     let parems = args.slice(1)
+//     return function(...args2){
+//         obj.call(args[0],[...parems,[...args2]])
+//     }
+// }
 
-FullName.myBind(user,'AP')('cricket');
+// FullName.myBind(user,'AP')('cricket');
+
+
+// Currying is a functional programming technique where a function that takes multiple arguments is transformed into a series of functions, each taking one argument at a time.
+
+// 🧠 In simple words:
+// Currying breaks a function with multiple parameters into a chain of functions that each take a single parameter.
+// Currying transforms a multi-parameter function into a chain of single-parameter functions.
+
+// It allows partial application and function reuse.
+
+// Commonly used in functional programming and JS frameworks.
+
+// const multyply = function (a){
+//      return function (b){
+//         return a*b
+//     }
+// }
+
+// const double = multyply(2);
+
+// console.log(double(10))
